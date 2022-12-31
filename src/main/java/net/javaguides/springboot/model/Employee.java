@@ -23,6 +23,10 @@ public class Employee {
 	
 	@Column(name = "email")
 	private String email;
+
+	@Column(name = "department")
+	private String department;
+
 	public long getId() {
 		return id;
 	}
@@ -46,5 +50,11 @@ public class Employee {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 }
