@@ -10,30 +10,38 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Employee Management System</h1>
+		<br><h2><b>Employee Management System</b></h2>
 		<hr>
-		<h2>Save Employee</h2>
+		<br><h4><b>Add New Employee</b></h4><br>
 
 		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
 			method="POST">
 				<input type="text" th:field="*{firstName}"
-				placeholder="Employee First Name" class="form-control mb-4 col-4">
+				placeholder="First Name" class="form-control mb-4 col-4" required>
 				
 				<input type="text" th:field="*{lastName}"
-				placeholder="Employee Last Name" class="form-control mb-4 col-4">
+				placeholder="Last Name" class="form-control mb-4 col-4" required>
 				
 				<input type="text" th:field="*{email}"
-				placeholder="Employee Email" class="form-control mb-4 col-4">
+				placeholder="Email" class="form-control mb-4 col-4" required>
 
 				<input type="text" th:field="*{department}"
-				placeholder="Employee Department" class="form-control mb-4 col-4">
+				placeholder="Department" class="form-control mb-4 col-4" required>
+
+				<label>Basic Salary: </label>
+				<input type="number" step="0.01" min="0" th:field="*{basicSalary}"
+				class="form-control mb-4 col-4" required>
+
+				<label>Bonus: </label>
+				<input type="number" step="0.01" min="0" th:field="*{bonus}"
+				placeholder="Employee Bonus" class="form-control mb-4 col-4" required>
 				
 				<button type="submit" class="btn btn-info col-2"> Save Employee</button>
 		</form>
 		
 		<hr>
 		
-		<a th:href = "@{/}"> Back to Employee List</a>
+		<a th:href = "@{/}"> Back to Employee List</a><br><br>
 	</div>
 </body>
 </html>
