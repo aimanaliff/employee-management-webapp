@@ -25,7 +25,16 @@
 				
 				<input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4" required>
 
-				<input type="text" th:field="*{department}" placeholder="Department" class="form-control mb-4 col-4" required>
+				<select id="department" name="department" th:field="*{department}" class="form-control mb-4 col-4" required>
+					<option value="Accounting and Finance">Accounting and Finance</option>
+					<option value="Board of Directors">Board of Directors</option>
+					<option value="Board of Directors">Business Development</option>
+					<option value="Customer Support">Customer Support</option>
+					<option value="Human Resources">Human Resources</option>
+					<option value="IT">IT</option>
+					<option value="Sales and Marketing">Sales and Marketing</option>
+					<option value="UX/UI">UX/UI</option>
+				</select>
 
 				<label>Basic Salary: </label>
 				<input type="number" step="0.01" min="0" th:field="*{basicSalary}" class="form-control mb-4 col-4" required>
