@@ -96,6 +96,7 @@ public class Employee {
 	}
 	public void setBonus(double bonus) {
 		this.bonus = bonus;
+		calculateNetSalary();
 	}
 	public double getNetSalary() {
 		return netSalary;
