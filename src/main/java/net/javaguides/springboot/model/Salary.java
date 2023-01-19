@@ -14,7 +14,11 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter @Setter
 @Table(name = "salaries")
 public class Salary {
 	
@@ -61,73 +65,25 @@ public class Salary {
 
 	private Employee employee;
 
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
-	public double getBasicSalary() {
-		return basicSalary;
-	}
 	public void setBasicSalary(double basicSalary) {
 		this.basicSalary = basicSalary;
 		calculateNetSalary();
-	}
-	public double getEpf() {
-		return epf;
-	}
-	public double getSocso() {
-		return socso;
-	}
-	public double getEis() {
-		return eis;
-	}
-	public double getBonus() {
-		return bonus;
 	}
 	public void setBonus(double bonus) {
 		this.bonus = bonus;
 		calculateNetSalary();
 	}
-	public int getOtHoursWorking() {
-		return otHoursWorking;
-	}
 	public void setOtHoursWorking(int otHoursWorking) {
 		this.otHoursWorking = otHoursWorking;
 		calculateNetSalary();
-	}
-	public int getOtHoursRest() {
-		return otHoursRest;
 	}
 	public void setOtHoursRest(int otHoursRest) {
 		this.otHoursRest = otHoursRest;
 		calculateNetSalary();
 	}
-	public int getOtHoursPublic() {
-		return otHoursPublic;
-	}
 	public void setOtHoursPublic(int otHoursPublic) {
 		this.otHoursPublic = otHoursPublic;
 		calculateNetSalary();
-	}
-	public double getOtPayTotal() {
-		return otPayTotal;
-	}
-	public double getNetSalary() {
-		return netSalary;
-	}
-	public Employee getEmployee() {
-		return employee;
-	}
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
 	}
 
 	// bonus, 11% EPF deduction, 0.5% SOCSO deduction, 0.2% EIS deduction, OT pay according to hours
