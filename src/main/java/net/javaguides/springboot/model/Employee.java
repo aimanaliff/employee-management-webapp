@@ -3,6 +3,7 @@ package net.javaguides.springboot.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,7 +32,7 @@ public class Employee {
 	@Column(name = "department")
 	private String department;
 
-	@OneToMany(mappedBy = "employee")
+	@OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
 	private List<Salary> salaries = new ArrayList<>();
 
 	public long getId() {
