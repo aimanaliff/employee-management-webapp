@@ -60,28 +60,7 @@
 						<a th:href="@{'/page/' + ${currentPage} + '?sortField=department&sortDir=' + ${reverseSortDir}}">
 							Department</a>
 					</th>
-					<th>
-						Basic Salary
-					</th>
-					<th>
-						EPF
-					</th>
-					<th>
-						SOCSO
-					</th>
-					<th>
-						EIS
-					</th>
-					<th>
-						Bonus
-					</th>
-					<th>
-						Overtime
-					</th>
-					<th>
-						<a th:href="@{'/page/' + ${currentPage} + '?sortField=netSalary&sortDir=' + ${reverseSortDir}}">
-							Net Salary</a>
-					</th>
+					<th> Salary </th>
 					<th> Actions </th>
 				</tr>
 			</thead>
@@ -91,14 +70,11 @@
 					<td th:text="${employee.lastName}"></td>
 					<td th:text="${employee.email}"></td>
 					<td th:text="${employee.department}"></td>
-					<td th:text="${employee.basicSalary}"></td>
-					<td th:text="${employee.epf}"></td>
-					<td th:text="${employee.socso}"></td>
-					<td th:text="${employee.eis}"></td>
-					<td th:text="${employee.bonus}"></td>
-					<td th:text="${employee.otPayTotal}"></td>
-					<td th:text="${employee.netSalary}"></td>
-					<td> <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Update</a>
+					<td>
+						<a th:href="@{/viewSalary/{id}(id=${employee.id})}" class="btn btn-primary">Salary</a>
+					</td>
+					<td>
+						<a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Update</a>
 					    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
