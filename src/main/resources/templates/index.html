@@ -23,6 +23,10 @@
 					<a class="navbar-brand" href="#" th:href="@{/}">Employee Management System</a>
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/}">Employees</a></li>
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/indexSalary}">Salaries</a></li>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
 					</ul>
