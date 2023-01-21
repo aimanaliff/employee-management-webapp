@@ -85,11 +85,13 @@ public class EmployeeController {
 
 	@GetMapping("/page")
 	public String searchByKeyword(Model model, String keyword) {
+
 		if (keyword != null) {
 			model.addAttribute("listEmployees", employeeService.searchByKeyword(keyword));
 		} else {
 			model.addAttribute("listEmployees", employeeService.getAllEmployees());
 		}
-		return "redirect:/";
+		
+		return "index";
 	}
 }
