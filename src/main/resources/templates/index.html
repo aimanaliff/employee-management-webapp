@@ -40,10 +40,10 @@
 		<br>
 		<h1><b>Employees List</b></h1><br>
 
-		<a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm mb-3"> Add Employee </a><br>
+		<a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm mb-3"> Add Employee </a>
 
-		<form th:action="@{'/page'}" method="GET">
-			<input id="txtSearch" type="text" name="keyword">
+		<form th:action="@{'/page'}" method="GET" style="margin-top: 10px;">
+			<input id="txtSearch" type="text" name="keyword">	
 			<button type="submit">Search</button>
 		</form>
 
