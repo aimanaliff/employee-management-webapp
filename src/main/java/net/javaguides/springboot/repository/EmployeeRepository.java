@@ -12,7 +12,7 @@ import net.javaguides.springboot.model.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
-    @Query(value = "SELECT * FROM Employee e WHERE e.firstName LIKE %:keyword%", nativeQuery = true)
+    @Query(value = "SELECT * FROM employees e WHERE e.first_name LIKE %:keyword%", nativeQuery = true)
     List<Employee> searchByKeyword(@Param("keyword") String keyword);
 
 }
